@@ -4,24 +4,38 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SysVote</title>
-    <link rel="stylesheet" href="./styles/style.css" />
-    <link rel="stylesheet" href="./styles/basics.css" />
+    <title>SysVote - Sign Up</title>
+    <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="../styles/basics.css" />
     <link rel="icon" href="" />
   </head>
 
   <body id="main-container" onload="get()">
     <header class="menu">
       <div class="logo">
-        <img src="./public/logo.png" alt="logo" />
+        <img src="../public/logo.png" alt="logo" />
       </div>
     </header>
 
     <div class="container_forms">
       <form class="formulario" id="formulario">
-        <h1>Login</h1>
-        <h2>Insira seus dados para realizar login em sua conta</h2>
+        <h1>Crie sua Conta</h1>
+        <h2>
+          Crie sua conta para ter acesso a votação. Dica: use seu CP como senha
+        </h2>
 
+        <div class="form-group">
+          <label for="nome">Nome</label>
+
+          <input
+            type="text"
+            class="form-control"
+            name="nome"
+            id="nome"
+            placeholder="Digite seu Nome"
+            required
+          />
+        </div>
         <div class="form-group">
           <label for="email">Email</label>
 
@@ -35,21 +49,19 @@
           />
         </div>
         <div class="form-group">
-          <label for="password">Senha</label>
+          <label for="password">Candidato</label>
 
           <input
             type="password"
             class="form-control password-input"
             name="password"
             id="password"
-            placeholder="Insira sua senha"
+            placeholder="Digite sua Senha"
             required
           />
         </div>
-        <input type="submit" name="submit" id="submit" value="Logar" />
-        <a href="./pages/signup.html" class="criar-conta"
-          >Crie sua conta aqui</a
-        >
+        <input type="submit" name="submit" id="submit" value="Votar" />
+        <a href="../index.html" class="criar-conta">Voltar ao login</a>
       </form>
     </div>
 

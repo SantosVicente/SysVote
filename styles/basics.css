@@ -1,19 +1,19 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    list-style-type: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
 }
 
 html {
-    font-size: 62.5%;
-    font-family: 'Poppins', sans-serif;
-    --cor0: #d8dbe3;
-    --cor1: #96969e;
-    --cor2: #1c1917;
-    --cor3: #0c0a09;
-    --cor4: #24c563;
-    --cor5: #1d3b26;
-    --border: #262626;
+  font-size: 62.5%;
+  font-family: "Poppins", sans-serif;
+  --cor0: #d8dbe3;
+  --cor1: #96969e;
+  --cor2: #1c1917;
+  --cor3: #09090b;
+  --cor4: #24c563;
+  --cor5: rgba(36, 197, 99, 0.7);
+  --border: #27272a;
 }

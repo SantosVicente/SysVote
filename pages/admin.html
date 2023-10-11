@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SysVote - Admin</title>
+    <link rel="stylesheet" href="../styles/style_admin.css" />
+    <link rel="stylesheet" href="../styles/basics.css" />
+    <link rel="icon" href="" />
+  </head>
+
+  <body id="main-container" onload="get()">
+    <header class="menu">
+      <div class="logo">
+        <img src="../public/logo.png" alt="logo" />
+      </div>
+
+      <nav>
+        <img src="../public/user-circle-2.svg" alt="user" width="40" />
+        <div>
+          <h6>Olá Admin</h6>
+          <p onclick="(() => {console.log('sair')})()">Sair da Conta</p>
+        </div>
+      </nav>
+    </header>
+
+    <div class="container_forms">
+      <div class="form-controller">
+        <form
+          class="formulario"
+          id="formulario"
+          onsubmit="(() => {console.log('cadastrado')})()"
+        >
+          <h1>Bem vindo @Admin!</h1>
+          <h2>
+            Cadastre novos concorrentes para a votação, ou visualize os
+            resultados
+          </h2>
+          <div class="form-group">
+            <label for="nome_candidato">Nome do Candidato</label>
+
+            <input
+              type="text"
+              class="form-control"
+              name="nome_candidato"
+              id="nome_candidato"
+              placeholder="Digite o nome do candidato"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="num_candidato">Número do Candidato</label>
+
+            <input
+              type="number"
+              class="form-control num-candidato-input"
+              name="num_candidato"
+              id="num_candidato"
+              min="1"
+              max="99"
+              placeholder="Digite o número do Candidato"
+              required
+            />
+          </div>
+          <button type="submit" name="submit" id="submit">Votar</button>
+
+          <div class="divider"></div>
+        </form>
+        <button id="apurar" onclick="(() => {console.log('apurado')})()">
+          Apurar Votos
+        </button>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="./scripts/script.js"></script>
+  </body>
+</html>
