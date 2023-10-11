@@ -1,27 +1,28 @@
-/*MUDAR PARA GERAR UMA TABELA DE VOTOS COM EMAIL DO ESTUDANTE, NUM E NOME DO CANDIDATO*/
-
 CREATE DATABASE IF NOT EXISTS eleicao;
-
 USE eleicao;
 
 CREATE TABLE IF NOT EXISTS candidatos (
 	id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-	num_candidato INTEGER(2) NOT NULL UNIQUE,
-	nome_candidato  VARCHAR(30) NOT NULL,
-	votos INTEGER NOT NULL
-);
-
-CREATE TABLE IF NOT EXISTS votantes (
-	id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-	email VARCHAR(50) NOT NULL UNIQUE
+	num_candidato INT NOT NULL UNIQUE,
+	nome_candidato VARCHAR(50) NOT NULL,
+	votos INT NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS estudantes (
 	id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-	nome_estudante  VARCHAR(30) NOT NULL,
-    email VARCHAR(50) NOT NULL UNIQUE,
-    senha VARCHAR(50) NOT NULL,
+	nome_estudante VARCHAR(50) NOT NULL,
+	email VARCHAR(50) NOT NULL UNIQUE,
+	senha VARCHAR(150) NOT NULL
 );
 
-select * from candidatos;
-select * from votantes;
+CREATE TABLE IF NOT EXISTS votos (
+	id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+	email VARCHAR(50) NOT NULL,
+	num_candidato INT NOT NULL,
+	FOREIGN KEY (num_candidato) REFERENCES candidatos(num_candidato),
+	FOREIGN KEY (email) REFERENCES estudantes(email)
+);
+
+SELECT * FROM candidatos;
+SELECT * FROM votos;
+SELECT * FROM estudantes;

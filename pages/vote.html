@@ -5,28 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SysVote - Vote</title>
-    <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="../styles/style_vote.css" />
     <link rel="stylesheet" href="../styles/basics.css" />
     <link rel="icon" href="" />
   </head>
 
-  <body id="main-container" onload="get()">
+  <body id="main-container">
     <header class="menu">
       <div class="logo">
         <img src="../public/logo.png" alt="logo" />
       </div>
 
-      <nav>
-        <img src="../public/user-circle-2.svg" alt="user" width="40" />
-        <div>
-          <h6>Olá User</h6>
-          <p onclick="(() => {console.log('sair')})()">Sair da Conta</p>
-        </div>
-      </nav>
+      <div id="logged-in-div" style="display: none;"></div>
+      
     </header>
 
     <div class="container_forms">
-      <form class="formulario" id="formulario">
+      <form class="formulario" id="formulario" method="post">
         <h1>Votar</h1>
         <h2>
           Contribua para nossa escola e vote! Lembre-se, somente 1 voto por
@@ -64,6 +59,6 @@
       </form>
     </div>
 
-    <script type="text/javascript" src="./scripts/script.js"></script>
+    <script type="text/javascript" src="../scripts/script.js"></script>
   </body>
 </html>

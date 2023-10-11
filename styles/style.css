@@ -6,7 +6,7 @@ body {
   height: 7.5vh;
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   font-size: 1.7rem;
   padding-inline: 2rem;
@@ -16,7 +16,6 @@ body {
   /* background-color: rgba(216, 219, 227, 0.2); */
   /* font-family: 'Poppins', sans-serif;; */
 }
-
 .logo {
   margin: 5px;
   width: 10%;
@@ -24,27 +23,6 @@ body {
 
 .logo img {
   width: 100%;
-}
-
-nav {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.menu nav h6 {
-  font-size: 1.7rem;
-}
-
-.menu nav p {
-  color: var(--cor1);
-  font-size: 1.4rem;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-}
-
-.menu nav p:hover {
-  color: var(--cor0);
 }
 
 .container_forms {

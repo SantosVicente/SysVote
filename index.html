@@ -10,17 +10,23 @@
     <link rel="icon" href="" />
   </head>
 
-  <body id="main-container" onload="get()">
+  <body id="main-container">
     <header class="menu">
       <div class="logo">
         <img src="./public/logo.png" alt="logo" />
       </div>
+
+      <nav>
+        <div id="logged-in-div" style="display: none;"></div>
+      </nav>
     </header>
 
     <div class="container_forms">
-      <form class="formulario" id="formulario">
+      <form class="formulario" id="formulario" method="POST">
         <h1>Login</h1>
         <h2>Insira seus dados para realizar login em sua conta</h2>
+
+        <h3 id="error-login" style="display: none; color: rgb(182, 39, 39); font-size: medium; margin-top: 1rem">Email ou senha incorreto/s</h3>
 
         <div class="form-group">
           <label for="email">Email</label>
@@ -46,7 +52,7 @@
             required
           />
         </div>
-        <input type="submit" name="submit" id="submit" value="Logar" />
+        <input type="submit" name="submit" id="submit" value="Logar" form-type="login" />
         <a href="./pages/signup.html" class="criar-conta"
           >Crie sua conta aqui</a
         >
