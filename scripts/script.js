@@ -33,6 +33,9 @@ document.getElementById("submit").addEventListener("click", async function (e) {
     };
 
     await cadastrar(data);
+
+    const btn = document.getElementById('submit');
+    btn.setAttribute("disabled", "disabled");
   }
   
   document.getElementById("formulario").reset();

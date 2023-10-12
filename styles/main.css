@@ -1,43 +1,14 @@
-body {
-  background: var(--cor3);
-}
-
 .menu {
   height: 7.5vh;
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   font-size: 1.7rem;
   padding-inline: 2rem;
-  padding-top: 1rem;
-  padding-bottom: 0.6rem;
   border-bottom: 1px solid var(--cor1);
   /* background-color: rgba(216, 219, 227, 0.2); */
   /* font-family: 'Poppins', sans-serif;; */
-}
-
-#logged-in-div {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.menu h6 {
-  font-size: 1.7rem;
-  color: var(--cor0);
-  font-weight: 600;
-}
-
-.menu p {
-  color: var(--cor1);
-  font-size: 1.4rem;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-}
-
-.menu p:hover {
-  color: var(--cor0);
 }
 
 .formulario {
