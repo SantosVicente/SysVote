@@ -17,7 +17,7 @@ document.getElementById("submit").addEventListener("click", async function (e) {
 
     const data = {
       email: email,
-      password: password,
+      password: await hashPassword(password),
     };
 
     await logar(data);
@@ -29,7 +29,7 @@ document.getElementById("submit").addEventListener("click", async function (e) {
     const data = {
       nome: nome,
       email: email,
-      password: password,
+      password: await hashPassword(password),
     };
 
     await cadastrar(data);
@@ -37,6 +37,18 @@ document.getElementById("submit").addEventListener("click", async function (e) {
   
   document.getElementById("formulario").reset();
 });
+
+async function hashPassword(password) {
+  const encoder = new TextEncoder();
+  const data = encoder.encode(password);
+  return crypto.subtle.digest("SHA-256", data).then((buffer) => {
+    let hashArray = Array.from(new Uint8Array(buffer));
+    let hashHex = hashArray
+      .map((byte) => byte.toString(16).padStart(2, "0"))
+      .join("");
+    return hashHex;
+  });
+}
 
 async function cadastrar(data) {
   const url = "http://localhost:5000/user.php";

@@ -55,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   }
 
-  $query = "SELECT * FROM estudantes WHERE email='$email' AND senha='$password'";
+  $query = "SELECT id, nome_estudante, email FROM estudantes WHERE email='$email' AND senha='$password'";
 
   $res = mysqli_query($conn, $query);
 
