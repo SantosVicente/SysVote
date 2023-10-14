@@ -9,9 +9,7 @@ body {
   justify-content: space-between;
   align-items: center;
   font-size: 1.7rem;
-  padding-inline: 2rem;
-  padding-top: 1rem;
-  padding-bottom: 0.6rem;
+  padding: 2rem;
   border-bottom: 1px solid var(--cor1);
   /* background-color: rgba(216, 219, 227, 0.2); */
   /* font-family: 'Poppins', sans-serif;; */

@@ -20,8 +20,6 @@ if (!$conn) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-  
   if(isset($data['email'])){
     $email = $data['email'];
 
@@ -117,5 +115,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     ));
     exit();
   }
+} else if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+  $query = "SELECT * FROM candidatos ORDER BY votos DESC";
+  $res = mysqli_query($conn, $query);
+
+  $votos = array();
+  while($row = mysqli_fetch_assoc($res)) {
+    $votos[] = $row;
+  }
+
+  http_response_code(200);
+  echo json_encode(array(
+    'success' => true,
+    'error' => null,
+    'data' => $votos
+  ));
+  exit();
 }
 ?>

@@ -15,7 +15,7 @@ html {
   --cor3: #09090b;
   --cor4: #24c563;
   --cor5: rgba(36, 197, 99, 0.7);
-  --border: #27272a;
+  --border: rgb(50, 50, 54);
 }
 
 body {

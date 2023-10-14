@@ -105,6 +105,70 @@ async function votar(data) {
   }
 }
 
+async function apurarVotos() {
+  const url = "http://localhost:5000/votos.php";
+
+  const requestOptions = {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+
+  try {
+    const response = await fetch(url, requestOptions);
+    const responseData = await response.json();
+
+   // renderizar os dados na tela em formato de tabela
+
+    if (response.status === 200) {
+      const table = document.getElementById("table");
+
+      // Limpar a tabela antes de renderizar os dados
+      table.innerHTML = "";
+
+      const tableHead = document.createElement("thead");
+      const tableBody = document.createElement("tbody");
+
+      const rowHead = document.createElement("tr");
+      const cellNome = document.createElement("th");
+      const cellNumero = document.createElement("th");
+      const cellVotos = document.createElement("th");
+
+      cellNome.textContent = "Nome";
+      cellNumero.textContent = "Número";
+      cellVotos.textContent = "Votos";
+
+      rowHead.appendChild(cellNome);
+      rowHead.appendChild(cellNumero);
+      rowHead.appendChild(cellVotos);
+
+      tableHead.appendChild(rowHead);
+
+      responseData.data.forEach((candidato) => {
+        const row = document.createElement("tr");
+        const cellNome = document.createElement("td");
+        const cellNumero = document.createElement("td");
+        const cellVotos = document.createElement("td");
+
+        cellNome.textContent = candidato.nome_candidato;
+        cellNumero.textContent = candidato.num_candidato;
+        cellVotos.textContent = candidato.votos;
+
+        row.appendChild(cellNome);
+        row.appendChild(cellNumero);
+        row.appendChild(cellVotos);
+
+        tableBody.appendChild(row);
+      });
+
+      table.appendChild(tableHead);
+      table.appendChild(tableBody);
+    }
+  } catch (error) {
+    console.error("Erro:", error);
+  }
+}
 
 async function cadastrarCandidato(data) {
   const url = "http://localhost:5000/candidatos.php";

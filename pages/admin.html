@@ -7,7 +7,7 @@
     <title>SysVote - Admin</title>
     <link rel="stylesheet" href="../styles/style_admin.css" />
     <link rel="stylesheet" href="../styles/basics.css" />
-    <link rel="icon" href="" />
+    <link rel="icon" href="../public/favicon.png" />
   </head>
 
   <body id="main-container">
@@ -24,7 +24,6 @@
         <form
           class="formulario"
           id="formulario"
-          onsubmit="(() => {console.log('cadastrado')})()"
         >
           <h1>Bem vindo @Admin!</h1>
           <h2>
@@ -71,9 +70,11 @@
 
           <div class="divider"></div>
         </form>
-        <button id="apurar" onclick="(() => {console.log('apurado')})()">
+        <button id="apurar" onclick="apurarVotos()">
           Apurar Votos
         </button>
+
+        <table id="table"></table>
       </div>
     </div>
 
