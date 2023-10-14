@@ -49,3 +49,33 @@ body {
   width: 100%;
   border: 1px solid var(--border);
 }
+
+select {
+  width: 100%;
+  border-radius: 0.7rem;
+  border: 1px solid var(--border);
+  padding: 1rem;
+  color: var(--cor1);
+  background-color: rgb(0, 0, 0, 0.4);
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+select:hover,
+select:active,
+select:focus {
+  background-color: rgb(0, 0, 0, 0.4);
+}
+
+select:focus {
+  outline-color: var(--cor4);
+  outline-style: solid;
+  outline-offset: 0.2rem;
+}
+
+option {
+  color: var(--cor1);
+  background-color: var(--cor2);
+  cursor: pointer;
+  font-size: 1.4rem;
+}

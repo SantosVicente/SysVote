@@ -28,17 +28,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $query = "SELECT * FROM estudantes WHERE email='$email'";
     $res = mysqli_query($conn, $query);
 
-    if($res->num_rows){
+    if(!$res->num_rows){
       http_response_code(409);
       echo json_encode(array(
         'success' => false,
-        'error' => "Duplicate entity with email '$email'"
+        'error' => "Not found entity with email '$email'"
       ));
       exit();
     }
-
   } else {
-    
     http_response_code(400);
     echo json_encode(array(
       'success' => false,
@@ -48,53 +46,68 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   }
 
-  if(isset($data['nome'])) $nome = $data['nome'];
+  if(isset($data['num_candidato'])) $num_candidato = $data['num_candidato'];
   else{
     http_response_code(400);
     echo json_encode(array(
       'success' => false,
-      'error' => "Missing 'nome' field"
+      'error' => "Missing 'num_candidato' field"
     ));
     exit();
   }
 
-  if(isset($data['password'])) $password = $data['password'];
-  else{
+  if ($num_candidato == "" || $email == "") {
     http_response_code(400);
     echo json_encode(array(
       'success' => false,
-      'error' => "Missing 'password' field"
+      'error' => "Missing 'num_candidato' or 'email' field"
     ));
     exit();
   }
 
-  if ($nome == "Admin") {
-    $query = "SELECT * FROM estudantes WHERE nome_estudante='$nome'";
-    $res = mysqli_query($conn, $query);
-    
-    if($res->num_rows){
-      http_response_code(409);
-      echo json_encode(array(
-        'success' => false,
-        'error' => "Já existe um Administrador cadastrado!"
-      ));
-      exit();
-    }
-  }
-
-  if ($nome == '' || $email == '' || $password == '') {
-    http_response_code(400);
-    echo json_encode(array(
-      'success' => false,
-      'error' => "Missing 'nome', 'email' or 'password' field"
-    ));
-    exit();
-  }
-
-
-  $query = "INSERT INTO estudantes (nome_estudante, email, senha) VALUES ('$nome', '$email', '$password')";
-
+  $query = "SELECT * FROM votos WHERE email='$email'";
   $res = mysqli_query($conn, $query);
+
+  if($res->num_rows){
+    http_response_code(409);
+    echo json_encode(array(
+      'success' => false,
+      'error' => "Duplicate entity with email '$email'"
+    ));
+    exit();
+  }
+
+  $query = "SELECT * FROM candidatos WHERE num_candidato='$num_candidato'";
+  $res = mysqli_query($conn, $query);
+
+  if(!$res->num_rows){
+    http_response_code(409);
+    echo json_encode(array(
+      'success' => false,
+      'error' => "Not found entity with num_candidato '$num_candidato'"
+    ));
+    exit();
+  }
+
+  $query = "SELECT * FROM estudantes WHERE email='$email'";
+  $res = mysqli_query($conn, $query);
+
+  if(!$res->num_rows){
+    http_response_code(409);
+    echo json_encode(array(
+      'success' => false,
+      'error' => "Not found entity with email '$email'"
+    ));
+    exit();
+  }
+
+  $query = "INSERT INTO votos (email, num_candidato) VALUES ('$email', '$num_candidato')";
+  $res = mysqli_query($conn, $query);
+
+  if($res) {
+    $query = "UPDATE candidatos SET votos = votos + 1 WHERE num_candidato='$num_candidato'";
+    $res = mysqli_query($conn, $query);
+  }
 
   if ($res) {
     http_response_code(200);

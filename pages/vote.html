@@ -27,38 +27,33 @@
           Contribua para nossa escola e vote! Lembre-se, somente 1 voto por
           pessoa
         </h2>
-        <h3 id="error-vote" style="display: none; color: red; font-size: large">
-          Este usuário ja votou!
-        </h3>
-        <!--alterar para ja aparecer por padrao um "ja votou"-->
-        <div class="form-group">
-          <label for="email">Email</label>
 
-          <input
-            type="email"
-            class="form-control"
-            name="email"
-            id="email"
-            placeholder="Digite seu E-mail"
-            required
-          />
-        </div>
+        <div class="divider"></div>
+
+        <h3 id="error-vote" style="display: none; color: rgb(182, 39, 39); font-size: large">
+          Este usuário ja votou! Novos votos não serão computados.
+        </h3>
+        <h3 id="error-vote2" style="display: none; color: rgb(182, 39, 39); font-size: large">
+          Ocorreu um erro ao votar!
+        </h3>
+        <h3 id="msg-vote" style="display: none; color: #24c563; font-size: large">
+          Voto enviado com sucesso!
+        </h3>
         <div class="form-group">
           <label for="num_candidato">Candidato</label>
 
-          <input
-            type="number"
-            class="form-control num-candidato-input"
-            name="num_candidato"
-            id="num_candidato"
-            placeholder="Número do Candidato"
-            required
-          />
+          <select id="num_candidato" name="num_candidato" required>
+            <option value="0" selected disabled hidden>
+              Selecione um candidato
+            </option>
+            <!-- Opções de candidatos serão inseridas aqui -->
+          </select>
         </div>
-        <input type="submit" name="submit" id="submit" value="Votar" />
+        <input type="submit" name="submit" id="submit" value="Votar" form-type="vote" />
       </form>
     </div>
 
     <script type="text/javascript" src="../scripts/script.js"></script>
+    <script type="text/javascript" src="../scripts/vote.script.js"></script>
   </body>
 </html>
