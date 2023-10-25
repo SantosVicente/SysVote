@@ -1,0 +1,22 @@
+.menu {
+  height: 7.5vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.7rem;
+  padding: 2rem;
+  border-bottom: 1px solid var(--cor1);
+  /* background-color: rgba(216, 219, 227, 0.2); */
+  /* font-family: 'Poppins', sans-serif;; */
+}
+
+.formulario {
+  background-color: var(--cor2);
+  border-radius: 0.7rem;
+  padding: 3rem 2rem;
+  color: var(--cor1);
+  max-width: 35rem;
+  width: 100%;
+  border: 1px solid var(--border);
+}

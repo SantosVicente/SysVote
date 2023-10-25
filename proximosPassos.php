@@ -2,7 +2,7 @@
 // implementar JSON Web Tokens (JWT) em PHP:
 
 // bibloteca:
-composer require firebase/php-jwt
+composer require firebase/php-jwt;
 
 // exemplo de uso:
 use Firebase\JWT\JWT;

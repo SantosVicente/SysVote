@@ -29,13 +29,13 @@ $conn = mysqli_connect($hostname, $user, $password, $database);
 if (!$conn) {
     die("Conexão falhou: " . mysqli_connect_error());
 }
-echo "Conexão feita com sucesso";
+echo "Conexão feita com successo";
 
 $query = "insert into questoes (titulo, descricao, disciplina, dificuldade, opcaoa, opcaob, opcaoc, opcaod, opcaoe, opcaocorreta) values ('$titulo', '$descricao', '$disciplina', '$dificuldade', '$opcaoa', '$opcaob', '$opcaoc', '$opcaod', '$opcaoe', '$opcaocorreta')";
 
 $res = mysqli_query($conn, $query);
 if($res){
-    echo '<h2>Questão incluída com sucesso!!!</h2>';
+    echo '<h2>Questão incluída com successo!!!</h2>';
 } else {
     echo '<h2>Questão não incluida!!!</h2>';
     var_dump(mysqli_error($conn));

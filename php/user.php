@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if($res->num_rows){
       http_response_code(409);
       echo json_encode(array(
-        'sucess' => false,
+        'success' => false,
         'error' => "Duplicate entity with email '$email'"
       ));
       exit();
@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
     http_response_code(400);
     echo json_encode(array(
-      'sucess' => false,
+      'success' => false,
       'error' => "Missing 'email' field"
     ));
     exit();
@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   else{
     http_response_code(400);
     echo json_encode(array(
-      'sucess' => false,
+      'success' => false,
       'error' => "Missing 'nome' field"
     ));
     exit();
@@ -60,15 +60,37 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   if(isset($data['password'])) $password = $data['password'];
   else{
-    
     http_response_code(400);
     echo json_encode(array(
-      'sucess' => false,
+      'success' => false,
       'error' => "Missing 'password' field"
     ));
     exit();
-
   }
+
+  if ($nome == "Admin") {
+    $query = "SELECT * FROM estudantes WHERE nome_estudante='$nome'";
+    $res = mysqli_query($conn, $query);
+    
+    if($res->num_rows){
+      http_response_code(409);
+      echo json_encode(array(
+        'success' => false,
+        'error' => "Já existe um Administrador cadastrado!"
+      ));
+      exit();
+    }
+  }
+
+  if ($nome == '' || $email == '' || $password == '') {
+    http_response_code(400);
+    echo json_encode(array(
+      'success' => false,
+      'error' => "Missing 'nome', 'email' or 'password' field"
+    ));
+    exit();
+  }
+
 
   $query = "INSERT INTO estudantes (nome_estudante, email, senha) VALUES ('$nome', '$email', '$password')";
 
@@ -77,7 +99,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   if ($res) {
     http_response_code(200);
     echo json_encode(array(
-      'sucess' => true,
+      'success' => true,
       'error' => null
     ));
     exit();

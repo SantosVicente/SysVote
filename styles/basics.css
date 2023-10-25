@@ -15,5 +15,119 @@ html {
   --cor3: #09090b;
   --cor4: #24c563;
   --cor5: rgba(36, 197, 99, 0.7);
-  --border: #27272a;
+  --border: rgb(50, 50, 54);
+}
+
+body {
+  background: var(--cor3);
+}
+
+.logo {
+  width: 20rem;
+}
+
+.logo img {
+  width: 100%;
+}
+
+.container_forms {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 92.5vh;
+}
+
+.formulario h1 {
+  color: var(--cor0);
+  font-size: 2.5rem;
+  margin-bottom: 0.7rem;
+}
+
+.formulario h2 {
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 1.5;
+}
+
+.formulario input {
+  background-color: rgb(0, 0, 0, 0.4);
+  border: 1px solid var(--border);
+  padding: 1rem;
+  border-radius: 0.7rem;
+  color: var(--cor0);
+}
+
+.formulario input:focus {
+  outline-color: var(--cor4);
+  outline-style: solid;
+  outline-offset: 0.2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-group label {
+  font-size: 1.4rem;
+  color: var(--cor0);
+  font-weight: 600;
+  margin-top: 3rem;
+}
+
+.formulario #submit {
+  background-color: var(--cor4);
+  width: 100%;
+  cursor: pointer;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease-in-out;
+  font-size: 1.6rem;
+  color: var(--cor2);
+}
+
+.formulario #submit:hover,
+.formulario #submit:disabled {
+  background-color: var(--cor5);
+}
+
+
+.criar-conta {
+  font-size: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  text-decoration: underline;
+  color: var(--cor1);
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+}
+
+.criar-conta:hover {
+  color: var(--cor0);
+}
+
+button {
+  background-color: var(--cor4);
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  font-size: 1.6rem;
+  color: var(--cor2);
+  height: 4rem;
+  border-radius: 0.7rem;
+  border: none;
+}
+
+button:hover {
+  background-color: var(--cor5);
+}
+
+.divider {
+  display: flex;
+  flex-direction: row;
+  height: 1px;
+  background-color: var(--cor1);
+  margin: 1rem 0 2rem 0;
 }

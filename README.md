@@ -1,5 +1,4 @@
 ### Crie uma conta com os dados a seguir para ir a área de admin
 
-  - Nome: Admin
- 	- Email: admin@ifsp.edu.br
-  - Senha: admin123!@#
+ - Crie uma conta com o nome de Admin, somente uma conta pode ser criada com esse nome, e ele é a chave 
+de autorização no momento da criação para definir quem terá acesso a área de admin
