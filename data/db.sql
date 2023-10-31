@@ -24,6 +24,11 @@ CREATE TABLE IF NOT EXISTS votos (
 	FOREIGN KEY (email) REFERENCES estudantes(email)
 );
 
+INSERT INTO candidatos(nome_candidato, num_candidato) VALUES
+("Ana Maria Torres", 1),
+("Pedro Farias", 2),
+("Joana Fon", 3); 
+
 SELECT * FROM candidatos;
 SELECT * FROM votos;
 SELECT * FROM estudantes;
