@@ -27,7 +27,10 @@ CREATE TABLE IF NOT EXISTS votos (
 INSERT INTO candidatos(nome_candidato, num_candidato) VALUES
 ("Ana Maria Torres", 1),
 ("Pedro Farias", 2),
-("Joana Fon", 3); 
+("Joana Fon", 3);
+
+INSERT INTO estudantes (nome_estudante, email, senha) VALUES
+("Admin", "admin@ifsp.edu.br", "a8d51fc6a058bfeacb77818d42d420ac1bf31529393a784ec60f7c2443047462");
 
 SELECT * FROM candidatos;
 SELECT * FROM votos;

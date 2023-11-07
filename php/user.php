@@ -1,4 +1,6 @@
 <?php
+include_once("connection.php");
+
 ini_set("display_errors", 1);
 error_reporting(E_ALL);
 
@@ -9,15 +11,6 @@ header('Content-type: application/json');
 
 $json = file_get_contents('php://input');
 $data = json_decode($json, true);
-
-$hostname = "localhost";
-$user = "root";
-$pass = "";
-$database = "eleicao";
-$conn = mysqli_connect($hostname, $user, $pass, $database);
-if (!$conn) {
-  die("Conexão falhou: " . mysqli_connect_error());
-}
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
