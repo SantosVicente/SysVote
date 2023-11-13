@@ -16,15 +16,12 @@
         <img src="../public/logo.png" alt="logo" />
       </div>
 
-      <div id="logged-in-div" style="display: none;"></div>
+      <div id="logged-in-div" style="display: none"></div>
     </header>
 
     <div class="container_forms">
       <div class="form-controller">
-        <form
-          class="formulario"
-          id="formulario"
-        >
+        <form class="formulario" id="formulario">
           <h1>Bem vindo @Admin!</h1>
           <h2>
             Cadastre novos concorrentes para a votação, ou visualize os
@@ -33,11 +30,27 @@
 
           <div class="divider"></div>
 
-          <h3 id="error-cad" style="display: none; color: rgb(182, 39, 39); font-size: medium; margin-top: 1rem">
+          <h3
+            id="error-cad"
+            style="
+              display: none;
+              color: rgb(182, 39, 39);
+              font-size: medium;
+              margin-top: 1rem;
+            "
+          >
             Houve algum erro ao cadastrar, revise seus dados!
           </h3>
-          <h3 id="msg-cad" style="display: none; color: #24c563; font-size: medium; margin-top: 1rem">
-            Cadastro realizado com successo! 
+          <h3
+            id="msg-cad"
+            style="
+              display: none;
+              color: #24c563;
+              font-size: medium;
+              margin-top: 1rem;
+            "
+          >
+            Cadastro realizado com successo!
           </h3>
 
           <div class="form-group">
@@ -66,17 +79,32 @@
               required
             />
           </div>
-          <button type="submit" name="submit" id="submit" form-type="candidatos">Cadastrar</button>
+          <button
+            type="submit"
+            name="submit"
+            id="submit"
+            form-type="candidatos"
+          >
+            Cadastrar
+          </button>
 
           <div class="divider"></div>
         </form>
-        <button id="apurar" onclick="apurarVotos()">
-          Apurar Votos
-        </button>
+        <button id="apurar" onclick="apurarVotos()">Apurar Votos</button>
 
         <table id="table"></table>
       </div>
     </div>
+
+    <footer>
+      <p>
+        Feito com amor por
+        <a target="_blank" href="https://github.com/SantosVicente"
+          >Vicente Santos</a
+        >
+        💜
+      </p>
+    </footer>
 
     <script type="text/javascript" src="../scripts/script.js"></script>
   </body>

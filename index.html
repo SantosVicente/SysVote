@@ -17,18 +17,32 @@
       </div>
 
       <nav>
-        <div id="logged-in-div" style="display: none;"></div>
+        <div id="logged-in-div" style="display: none"></div>
       </nav>
     </header>
 
     <div class="container_forms">
       <form class="formulario" id="formulario" method="POST">
         <h1>Login</h1>
-        <h2>Insira seus dados para realizar login em sua conta</h2>
+        <h2 style="text-align: justify">
+          Use suas credenciais para acessar a área de votação. Caso seja um
+          administrador, consulte a documentação deixadas pelo criador da
+          plataforma para obter suas credenciais
+        </h2>
 
-        <div class="divider" style="margin-bottom: 1rem;"></div>
+        <div class="divider" style="margin-bottom: 1rem"></div>
 
-        <h3 id="error-login" style="display: none; color: rgb(182, 39, 39); font-size: medium; margin-top: 1rem">Email ou senha incorreto/s</h3>
+        <h3
+          id="error-login"
+          style="
+            display: none;
+            color: rgb(182, 39, 39);
+            font-size: medium;
+            margin-top: 1rem;
+          "
+        >
+          Email ou senha incorreto/s
+        </h3>
 
         <div class="form-group">
           <label for="email">Email</label>
@@ -54,13 +68,28 @@
             required
           />
         </div>
-        <input type="submit" name="submit" id="submit" value="Logar" form-type="login" />
+        <input
+          type="submit"
+          name="submit"
+          id="submit"
+          value="Logar"
+          form-type="login"
+        />
         <a href="./pages/signup.html" class="criar-conta"
           >Crie sua conta aqui</a
         >
       </form>
     </div>
 
+    <footer>
+      <p>
+        Feito com amor por
+        <a target="_blank" href="https://github.com/SantosVicente"
+          >Vicente Santos</a
+        >
+        💜
+      </p>
+    </footer>
     <script type="text/javascript" src="./scripts/script.js"></script>
   </body>
 </html>

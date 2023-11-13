@@ -16,8 +16,7 @@
         <img src="../public/logo.png" alt="logo" />
       </div>
 
-      <div id="logged-in-div" style="display: none;"></div>
-      
+      <div id="logged-in-div" style="display: none"></div>
     </header>
 
     <div class="container_forms">
@@ -30,13 +29,27 @@
 
         <div class="divider"></div>
 
-        <h3 id="error-vote" style="display: none; color: rgb(182, 39, 39); font-size: large">
+        <h3
+          id="error-vote"
+          style="display: none; color: rgb(182, 39, 39); font-size: large"
+        >
           Este usuário ja votou! Novos votos não serão computados.
         </h3>
-        <h3 id="error-vote2" style="display: none; color: rgb(182, 39, 39); font-size: large">
+        <h3
+          id="error-vote2"
+          style="display: none; color: rgb(182, 39, 39); font-size: large"
+        >
           Ocorreu um erro ao votar!
         </h3>
-        <h3 id="msg-vote" style="display: none; color: #24c563; border: 1px solid rgb(50, 50, 54);        font-size: large">
+        <h3
+          id="msg-vote"
+          style="
+            display: none;
+            color: #24c563;
+            border: 1px solid rgb(50, 50, 54);
+            font-size: large;
+          "
+        >
           Voto enviado com sucesso!
         </h3>
         <div class="form-group">
@@ -49,9 +62,25 @@
             <!-- Opções de candidatos serão inseridas aqui -->
           </select>
         </div>
-        <input type="submit" name="submit" id="submit" value="Votar" form-type="vote" />
+        <input
+          type="submit"
+          name="submit"
+          id="submit"
+          value="Votar"
+          form-type="vote"
+        />
       </form>
     </div>
+
+    <footer>
+      <p>
+        Feito com amor por
+        <a target="_blank" href="https://github.com/SantosVicente"
+          >Vicente Santos</a
+        >
+        💜
+      </p>
+    </footer>
 
     <script type="text/javascript" src="../scripts/script.js"></script>
     <script type="text/javascript" src="../scripts/vote.script.js"></script>

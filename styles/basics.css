@@ -93,7 +93,6 @@ body {
   background-color: var(--cor5);
 }
 
-
 .criar-conta {
   font-size: 1.4rem;
   display: flex;
@@ -130,4 +129,25 @@ button:hover {
   height: 1px;
   background-color: var(--cor1);
   margin: 1rem 0 2rem 0;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 7.5vh;
+  background-color: var(--cor2);
+}
+
+footer a,
+footer p {
+  color: var(--cor0);
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+
+footer a {
+  text-decoration: underline;
+  font-weight: 600;
 }

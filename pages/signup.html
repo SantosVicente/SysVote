@@ -16,23 +16,29 @@
         <img src="../public/logo.png" alt="logo" />
       </div>
 
-      <div id="logged-in-div" style="display: none;"></div>
+      <div id="logged-in-div" style="display: none"></div>
     </header>
 
     <div class="container_forms">
       <form class="formulario" id="formulario" method="post">
         <h1>Crie sua Conta</h1>
-        <h2>
-          Crie sua conta para ter acesso a votação.
-        </h2>
+        <h2>Crie sua conta para ter acesso a votação.</h2>
 
-        <div class="divider" style="margin-bottom: 1rem;"></div>
+        <div class="divider" style="margin-bottom: 1rem"></div>
 
-        <h3 id="error-login" style="display: none; color: rgb(182, 39, 39); font-size: medium; margin-top: 1rem">
+        <h3
+          id="error-login"
+          style="
+            display: none;
+            color: rgb(182, 39, 39);
+            font-size: medium;
+            margin-top: 1rem;
+          "
+        >
           Email já esta em uso ou nome inválido
         </h3>
 
-        <div class="form-group"> 
+        <div class="form-group">
           <label for="nome">Nome</label>
 
           <input
@@ -43,7 +49,10 @@
             placeholder="Digite seu Nome"
             required
           />
-          <h3 id="error-nome" style="display: none; color: rgb(182, 39, 39); font-size: medium;">
+          <h3
+            id="error-nome"
+            style="display: none; color: rgb(182, 39, 39); font-size: medium"
+          >
             Deve ter pelo menos 5 caracteres
           </h3>
         </div>
@@ -58,7 +67,10 @@
             placeholder="Digite seu E-mail"
             required
           />
-          <h3 id="error-email" style="display: none; color: rgb(182, 39, 39); font-size: medium;">
+          <h3
+            id="error-email"
+            style="display: none; color: rgb(182, 39, 39); font-size: medium"
+          >
             Email inválido
           </h3>
         </div>
@@ -73,14 +85,34 @@
             placeholder="Digite sua Senha"
             required
           />
-          <h3 id="error-password" style="display: none; color: rgb(182, 39, 39); font-size: medium;">
+          <h3
+            id="error-password"
+            style="display: none; color: rgb(182, 39, 39); font-size: medium"
+          >
             Senha muito fraca
           </h3>
         </div>
-        <input type="submit" name="submit" id="submit" value="Cadastrar" form-type="signup" disabled />
+        <input
+          type="submit"
+          name="submit"
+          id="submit"
+          value="Cadastrar"
+          form-type="signup"
+          disabled
+        />
         <a href="../index.html" class="criar-conta">Voltar ao login</a>
       </form>
     </div>
+
+    <footer>
+      <p>
+        Feito com amor por
+        <a target="_blank" href="https://github.com/SantosVicente"
+          >Vicente Santos</a
+        >
+        💜
+      </p>
+    </footer>
 
     <script type="text/javascript" src="../scripts/script.js"></script>
     <script type="text/javascript" src="../scripts/signup.script.js"></script>
